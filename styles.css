@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
 }
 
 body{
@@ -13,6 +12,13 @@ body{
     font-family:'Epilogue', sans-serif;
 }
 
+.sidebar{
+    display: none;
+}
+
+#check{
+    display: none;
+}
 
 #top, ul{
     display: flex;
@@ -139,8 +145,6 @@ body{
 .dropdown .items a svg{
     margin: 0 13px 0 10px;
 }
-
-
 
 .box2{
     position: relative;
@@ -392,24 +396,146 @@ body{
     padding: 0;
     box-sizing: border-box;
     width: 100%;
-    }
+}
 
-    #top .menu1{
+#top .logo img{
+    width: 4em;
+    
+}
+
+#top .menu1{
         display: block;
-        width: 200px;
-        margin: 35px 20px 0 250px;
-    }
+        margin: 30px -170px 0 0;
+        z-index: 2;
+        position: absolute;
+        width: 25px;
+        right: 195px;
+        transition: all .5s ease;
+}
+
+#top .menu2{
+    width: 25px;
+    margin: 30px -170px 0 0;
+    z-index: 2;
+    position: absolute;
+    position: fixed;
+    display: none;
+    right: 10px;
+    margin: 20px;
+    transition: all .5s ease;
+    
+}
+
+#check{
+    display: none;
+}
+
+.sidebar{
+    display: block;
+    top: 0;
+    position: fixed;
+    right: -250px;
+    width: 200px;
+    height: 100%;
+    transition: all .5s ease;
+    background: hsl(0, 0%, 98%);
+}
+
+.sidebar ul{
+    display: block;
+    width: 100%;
+    line-height: 2px;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .4s;
+    margin-bottom: 40px;
+}
+
+.sidebar ul li a:hover{
+    cursor: pointer;
+}
+
+.sidebar ul li a{
+    font-size: 12px;
+    color: hsl(0, 0%, 41%);
+    font-weight: 700;
+}
+
+.sidebar ul:first-child{
+    margin-top: 100px;
+}
+
+ul li:hover a{
+    padding-left: 10px;
+}
+
+.smlbtns{
+    text-align: center;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.smlbtn1{
+    border: 0;
+    background: hsla(0, 0%, 98%, 0.938);
+    color: hsl(0, 0%, 41%);
+    font-size: smaller;
+
+}
+
+.smlbtn2{
+    width: 35vw;
+    margin-top: 10px;
+    border: 1px solid hsl(0, 0%, 41%);
+    background: hsla(0, 0%, 98%, 0.938);
+    padding: 10px;
+    border-radius: 10px;
+    color: hsl(0, 0%, 41%);
+    font-size: smaller;
+}
+
+
+#check:checked ~ .sidebar{
+    right: 0;
+}
+
+#check:checked ~ label .menu2{
+    right: 200px;
+    opacity: 20px;
+    margin: 30px -170px 0 0;
+    width: 23px;
+}
+
+#check:checked ~ label .menu1{
+    right: 250px;
+    opacity: 20px;
+    pointer-events: none;
+    
+}
+
+#check:checked ~ label {
+    right: -195px;
+}
+
+ #check:checked ~ label .menu1{
+    display: none;
+}
+
+#check:checked ~ label .menu2{
+    display: block;
+} 
 
 #main{
         width: 100%;
         flex-wrap: wrap;
-    }
+}
 
 #main img#img2{
         display: block;
         margin: 0 0 50px 0 ;
         width: 100%;
-        
 }
     
 
@@ -443,8 +569,6 @@ body{
     display: none;
 }
 
-
-
 #foot img{
     object-fit: scale-down;
     width: 80px;
@@ -454,6 +578,6 @@ body{
 
 .box, .box2, .list, .btns{
     display: none;
-}  
+}
 
 }
